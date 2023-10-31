@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:regular;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+* img {
+  // звездочка значит для всех картинок
+  max-width: 100%;
+}
+:root {
+  --bg-color: #121b25; //задаем сразу переменные цвета
+  --accent-color: #1aa090;
+  --text-color: #d6d6d6;
+}
+body {
+  font-family: "Work Sans", sans-serif;
+  background-color: var(--bg-color);
+}
+
+[class*="__container"] {
+  // стили преиментся для всех классов с окончанием __container
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/*---------------------Header---------------------*/
+
+.header {
+  padding: 40px 0;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  &__logo {
+    max-width: 200px;
+  }
+  &__navigation {
+    display: flex;
+    align-items: center;
+    gap: clamp(
+      1.25rem,
+      -2.799rem + 8.44vw,
+      4.688rem
+    ); // фича что бы не писать медиазапросы с брейкпоинтами
+  }
+  &__menu {
+  }
+  &__buttons {
+    display: flex;
+    gap: 5px;
+  }
+  &__btn {
+    padding: 11px 20px;
+    color: #ffffff;
+    border: 2px solid var(--accent-color);
+    background-color: transparent; // цвет фона дочерних элементов совпадает с цветом фона родительского элемента
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+}
+.menu {
+  &-icon {
+    display: none;
+    @media (max-width: 992px) {
+      display: block;
+      height: 18px;
+      width: 30px;
+      position: relative;
+      cursor: pointer;
+      z-index: 5px;
+      span {
+        transform: all .3s ease 0s;
+        top: calc(50%-1px);
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #ffffff;
+        &:first-child {
+          top: 0;
+        }
+        &:last-child {
+          top: auto;
+          bottom: 0;
+        }
+      }
+      &._active {
+        span {
+          transform: scale(
+            0
+          ); // можно увеличивать и уменьшать объекты на веб-странице.
+          &:first-child {
+            transform: rotate(-45deg);
+            top: calc(50%-1px);
+          }
+          &:last-child {
+            transform: rotate(-45deg);
+            bottom: calc(50%-1px);
+          }
+        }
+      }
+    }
+  }
+  &__body {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  &__item {
+  }
+  &__link {
+    font-weight: 500;
+    font-style: 16px;
+    text-transform: capitalize;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      background-color: var(--accent-color);
+      height: 3px;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+    }
+    @media (any-hover: hover) {
+      // что бы ховер работал на всех устройствах
+      &:hover {
+        color: #ffffff;
+        &:before {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.login {
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--accent-color);
+    }
+  }
+}
+.register {
+  background-color: var(--accent-color);
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
