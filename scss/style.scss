@@ -36,12 +36,18 @@ body {
 
 /*---------------------General---------------------*/ //общие стили
 
+.title {
+  font-weight: 600;
+  font-size: clamp(1.875rem, 1.548rem + 1.64vw, 3rem);
+  line-height: 1.26;
+  text-transform: capitalize;
+  color: #fff;
+}
 .text {
   font-weight: 400;
   font-style: 18px;
   line-height: 1.7;
   color: var(--text-color);
-
 }
 
 /*---------------------General---------------------*/
@@ -216,6 +222,13 @@ body {
 
 .hero {
   margin-top: clamp(1.875rem, 0.852rem + 5.11vw, 4.688rem);
+  padding-bottom: clamp(1.25rem, -0.023rem + 6.36vw, 5.625rem);
+  .hero-decor {
+    position: absolute;
+    bottom: -150px;
+    right: 0;
+    z-index: -1;
+  }
   &__container {
     display: flex;
     justify-content: space-between;
@@ -306,7 +319,7 @@ position: absolute;
   &__icon {
     width: 10px;
     height: 7px;
-    background: url(/img/icons/dropdown.svg) center bottom no-repeat;
+    background: url(/img/icons/hero_dropdown.svg) center bottom no-repeat;
     transition: transform .2s;
 &._active {
   transform: rotate(180deg);
@@ -349,7 +362,31 @@ transform: translateY(5px);
   }
 }
 
-
-
 /*---------------------/Filter---------------------*/
 
+/*---------------------Featured---------------------*/
+.featured {
+  padding-top: clamp(1.25rem, -0.023rem + 6.36vw, 5.625rem);
+
+  &__container {
+  }
+  &__title {
+  }
+  &__box {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    overflow: auto;
+  }
+  &__item {
+    flex: 0 0 auto;
+  }
+  &__img {
+  }
+}
+
+
+
+/*---------------------/Featured---------------------*/

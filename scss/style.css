@@ -36,6 +36,14 @@ body._lock {
 }
 
 /*---------------------General---------------------*/
+.title {
+  font-weight: 600;
+  font-size: clamp(1.875rem, 1.548rem + 1.64vw, 3rem);
+  line-height: 1.26;
+  text-transform: capitalize;
+  color: #fff;
+}
+
 .text {
   font-weight: 400;
   font-style: 18px;
@@ -208,6 +216,13 @@ body._lock {
 /*---------------------Hero---------------------*/
 .hero {
   margin-top: clamp(1.875rem, 0.852rem + 5.11vw, 4.688rem);
+  padding-bottom: clamp(1.25rem, -0.023rem + 6.36vw, 5.625rem);
+}
+.hero .hero-decor {
+  position: absolute;
+  bottom: -150px;
+  right: 0;
+  z-index: -1;
 }
 .hero__container {
   display: flex;
@@ -305,7 +320,7 @@ body._lock {
 .block-filter__icon {
   width: 10px;
   height: 7px;
-  background: url(/img/icons/dropdown.svg) center bottom no-repeat;
+  background: url(/img/icons/hero_dropdown.svg) center bottom no-repeat;
   transition: transform 0.2s;
 }
 .block-filter__icon._active {
@@ -347,4 +362,20 @@ body._lock {
   }
 }
 
-/*---------------------/Filter---------------------*//*# sourceMappingURL=style.css.map */
+/*---------------------/Filter---------------------*/
+/*---------------------Featured---------------------*/
+.featured {
+  padding-top: clamp(1.25rem, -0.023rem + 6.36vw, 5.625rem);
+}
+.featured__box {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  overflow: auto;
+}
+.featured__item {
+  flex: 0 0 auto;
+}
+/*---------------------/Featured---------------------*//*# sourceMappingURL=style.css.map */
