@@ -33,3 +33,19 @@ if(filter) {
 }
 
 /*-------------/Filter-------------*/
+
+/*-------------Swiper-------------*/
+
+const swiper = new Swiper('.popular-slider', {
+    spaceBetween: 20, // отстпы слайдов
+    slidesPerView: 3, // кол-во слайдов на экране
+    loop:true, //бесконечный слайдер
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+  });
+
+/*-------------/Swiper-------------*/
