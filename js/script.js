@@ -36,10 +36,10 @@ if(filter) {
 
 /*-------------Swiper-------------*/
 
-const swiper = new Swiper('.popular-slider', {
+const popularSlider = new Swiper('.popular-slider', {
     spaceBetween: 20, // отстпы слайдов
     slidesPerView: 3, // кол-во слайдов на экране
-    loop:true, //бесконечный слайдер
+    //loop:true, бесконечный слайдер
 
     navigation: {
       nextEl: '.swiper-button-next',
@@ -48,4 +48,34 @@ const swiper = new Swiper('.popular-slider', {
 
   });
 
+
+  const sliderReviews = new Swiper('.slider-reviews', {
+    spaceBetween: 20, // отстпы слайдов
+    slidesPerView: 1, // кол-во слайдов на экране
+    loop:true, //бесконечный слайдер
+    autoHeight: true, // автоматически пдстройка стрелочек под размер слайда
+
+
+    navigation: {
+      nextEl: '.slider-reviews-prew',
+      prevEl: '.slider-reviews-next',
+    },
+
+  });
 /*-------------/Swiper-------------*/
+
+/*-------------Gallery-------------*/
+const galleryItems = document.querySelectorAll('.gallery__item')
+
+if(galleryItems.length>0) {
+  galleryItems.forEach(item =>{
+    new Swiper(item, {
+      slidesPerView: 1,
+      autoplay: {
+        delay: 5000,
+      },
+      effect: 'fade',
+    })
+  })
+}
+/*-------------/Gallery-------------*/
